@@ -8,6 +8,15 @@ page=requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 #here i found the Div called ResultContainer, thats where i all the job listings are
 results = soup.find(id='ResultsContainer')
+description = soup.find(id='ContentContainer')
+desc_elem = description.find_all('div')
+
+desc_jobs = description.find_all('div',  class_='mux-job-preview')
+
+for i in desc_jobs:
+    titles = i.find('div')
+    print(titles)
+
 
 jobs_elem=results.find_all('section',  class_='card-content')
     
