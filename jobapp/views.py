@@ -2,10 +2,11 @@ from __future__ import absolute_import
 from django.shortcuts import render, HttpResponse
 import requests
 from bs4 import BeautifulSoup
+from jobberman import jobs
 
 # Create your views here.
 
-    
+'''
     
 def normal(request):
     
@@ -66,14 +67,9 @@ def normal(request):
         return main.company, main.title
 
     main()
-    for i in main.company:
-        j=i
-        
-    for a in main.title:
-        c=a
-        
+    
     zipped = zip(main.company, main.title)
-
+    
     context = { 
         'company': main.company,
         'title':main.title,
@@ -91,3 +87,12 @@ def newMains(request):
     return render(request, 'mains.html', context={
         'mains':mains
     })
+'''
+
+def jobberman_jobs(request):
+    
+    context={
+        'zipped':jobs(),
+    }
+    
+    return render(request, 'index.html', context=context)

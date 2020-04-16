@@ -1,6 +1,4 @@
-
-<h1> Job Finder</h1>
-<title> Job Finder</title>
+<html>
 
 <head>
 
@@ -12,39 +10,91 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 <style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-        }
+.job-cards{
+    margin-left:20%;
+    margin-bottom:2px;
+    margin-top:20px;
+}
+.job-background{
+    background-color: RGB(236, 239, 241);
+    margin:100px;
+    margin-top:-10px;
+    
+}
 
-th, td {
-    border: 1px solid black;
+#nav-top-link2{
+    color: RGB(67, 76, 94);
+    margin-left:20%;
 
-    padding: 15px;
-    text-align: left;
-        }
-#t01 {
-    border: 1px solid black;
+}
 
-    width: 100%;    
-    background-color: #f1f1c    1;
-        }
+#nav-top-link1{
+    color: RGB(67, 76, 94);
+    margin-left:720%;
+
+}
+
 </style>
 </head>
 <body>
-    
 
- {% for i,j in zipped %}  
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><h1 class=header> Job Finder</h1>
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" id='nav-top-link1' href="#">Home </a>
+      <a class="nav-item nav-link" id='nav-top-link2' href="#">About</a>
+      
+    </div>
+  </div>
+</nav>
+
+<h2> Job Category: <h4>Tech</h4> </h2>
+
+<title> Job Finder</title>
+    
+ <div class='job-background'>
+ {% for i,j,k in zipped %} 
+
+ <div class="row job-cards">
+  <div class="col-sm-12"> 
+<div class="card w-75  text-white bg-dark mb-3" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="">
+  <div class="card-body">
+    <h2 class="card-title">Role: {{i}}</h2>
+    <h5 class="card-title">Location: {{j}}</h5>
+    <p class="card-text">Description: {{k}}</p>
+
+    <a href="#" class="btn btn btn-outline-primary">See More</a>
+  </div>
+</div>
+</div>
+</div>
+
+{% endfor %}
+</div>
+
+
+
 <div class="card w-100 text-center text-white bg-dark mb-3" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="">
   <div class="card-body">
-    <h2 class="card-title">{{j}}</h2>
-    <h5 class="card-title">{{i}}</h5>
+    <h5 class="card-title">Mitchel Inaju</h5>
+
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="btn btn btn-outline-primary">See More</a>
+    <button type="button" class="btn btn-outline-primary">Primary</button>
   </div>
 </div>
-{% endfor %}
+
 
     
 
@@ -55,3 +105,4 @@ th, td {
 </body>
 
 
+</html>

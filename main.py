@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+from jobberman import jobs
+
 #this part gets the Html from the site
 url = 'https://www.monster.com/jobs/search/?q=Software-Developer&where=nigeria'
 page=requests.get(url)
@@ -30,7 +32,7 @@ def job_listings():
         title_list.append(title.text)
         company_list.append(company.text)
 
-        # \n and \r are removed(stripped)
+    # \n and \r are removed(stripped)
     job_listings.title_list_stripped = []
     job_listings.company_list_stripped = []
     
@@ -54,4 +56,5 @@ def main():
     
     
 main()
-        
+
+print(jobs)
